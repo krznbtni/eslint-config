@@ -1,12 +1,15 @@
 {
   "name": "@krznbtni/eslint-config-svelte",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "author": "krznbtni",
   "license": "MIT",
   "keywords": [
     "eslint-config"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "files": [
     "index.js"

@@ -1,7 +1,10 @@
 {
   "name": "@krznbtni/eslint-config-ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "krznbtni",
   "license": "MIT",
   "homepage": "https://github.com/krznbtni/eslint-config",
