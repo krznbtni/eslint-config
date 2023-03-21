@@ -2,12 +2,13 @@
   "name": "@krznbtni/eslint-config-monorepo",
   "version": "0.0.1",
   "private": "true",
+  "packageManager": "pnpm@7.30.0",
   "description": "Some ESLint config presets",
-  "license": "MIT",
   "author": "krznbtni",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --write",
+    "lint:fix": "eslint . --fix",
     "prepare": "husky install"
   },
   "config": {
@@ -21,6 +22,5 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.36.0",
     "husky": "^8.0.0"
-  },
-  "packageManager": "pnpm@7.30.0"
+  }
 }

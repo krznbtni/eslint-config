@@ -1,36 +1,37 @@
-const { isPackageExists } = require("local-pkg");
+const { isPackageExists } = require('local-pkg')
 
-const TS = isPackageExists("typescript");
+const TS = isPackageExists('typescript')
 
-if (!TS)
+if (!TS) {
   console.warn(
-    "[@krznbtni/eslint-config] TypeScript is not installed, fallback to JS only."
-  );
+    '[@krznbtni/eslint-config] TypeScript is not installed, fallback to JS only.',
+  )
+}
 
 module.exports = {
   overrides: [
     {
-      files: ["*.svelte"],
-      parser: "svelte-eslint-parser",
+      files: ['*.svelte'],
+      parser: 'svelte-eslint-parser',
       parserOptions: {
-        sourceType: "module",
+        sourceType: 'module',
         parser: {
           // Specify a parser for each lang.
-          ts: "@typescript-eslint/parser",
-          js: "espree",
-          typescript: "@typescript-eslint/parser",
+          ts: '@typescript-eslint/parser',
+          js: 'espree',
+          typescript: '@typescript-eslint/parser',
         },
       },
       rules: {
-        "no-unused-vars": "off",
-        "no-undef": "off",
-        ...(TS ? { "@typescript-eslint/no-unused-vars": "off" } : null),
+        'no-unused-vars': 'off',
+        'no-undef': 'off',
+        ...(TS ? { '@typescript-eslint/no-unused-vars': 'off' } : null),
       },
     },
   ],
   extends: [
-    "plugin:svelte/recommended",
-    TS ? "@krznbtni/eslint-config-ts" : "@krznbtni/eslint-config-basic",
+    'plugin:svelte/recommended',
+    TS ? '@krznbtni/eslint-config-ts' : '@krznbtni/eslint-config-basic',
   ],
   rules: {},
-};
+}
