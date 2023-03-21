@@ -1,6 +1,7 @@
 {
   "name": "@krznbtni/eslint-config-monorepo",
   "version": "0.0.3",
+  "private": "true",
   "packageManager": "pnpm@7.30.0",
   "description": "Some ESLint config presets",
   "author": "krznbtni",
@@ -22,7 +23,6 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.36.0",
-    "husky": "^8.0.0",
-    "rimraf": "^4.4.0"
+    "husky": "^8.0.0"
   }
 }
