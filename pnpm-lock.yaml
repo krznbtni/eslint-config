@@ -4,11 +4,13 @@ importers:
 
   .:
     specifiers:
+      '@krznbtni/eslint-config': '*'
       commitizen: ^4.3.0
       cz-conventional-changelog: ^3.3.0
       eslint: ^8.36.0
       husky: ^8.0.0
     devDependencies:
+      '@krznbtni/eslint-config': link:packages/all
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
       eslint: 8.36.0
@@ -87,11 +89,13 @@ importers:
       eslint: ^8.36.0
       eslint-plugin-svelte: ^2.22.0
       local-pkg: ^0.4.3
+      svelte: ^3.57.0
     dependencies:
       '@krznbtni/eslint-config-basic': link:../basic
       '@krznbtni/eslint-config-ts': link:../typescript
-      eslint-plugin-svelte: 2.22.0_eslint@8.36.0
+      eslint-plugin-svelte: 2.22.0_wzem237sbvnwe7n34ytc5phasy
       local-pkg: 0.4.3
+      svelte: 3.57.0
     devDependencies:
       eslint: 8.36.0
 
@@ -1240,7 +1244,7 @@ packages:
       eslint: 8.36.0
     dev: false
 
-  /eslint-plugin-svelte/2.22.0_eslint@8.36.0:
+  /eslint-plugin-svelte/2.22.0_wzem237sbvnwe7n34ytc5phasy:
     resolution: {integrity: sha512-zqLpvXjBtOz7XbX9JBi7ti+8t6IVKjv8AxLlZDv29VJFvO0d+MrCEa4b3eiMMFTZOL+EQ+UWXoiJBkw/vSsmqA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1259,7 +1263,8 @@ packages:
       postcss: 8.4.21
       postcss-load-config: 3.1.4_postcss@8.4.21
       postcss-safe-parser: 6.0.0_postcss@8.4.21
-      svelte-eslint-parser: 0.24.2
+      svelte: 3.57.0
+      svelte-eslint-parser: 0.24.2_svelte@3.57.0
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -2777,7 +2782,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /svelte-eslint-parser/0.24.2:
+  /svelte-eslint-parser/0.24.2_svelte@3.57.0:
     resolution: {integrity: sha512-MYZYe8Z7C3eoZxF1VPOeVGe98BrgiX07+roCesACzCxCKpUkFJhi4w5JZwjdw60LGF71rfMJNypwb7AIG1/DYA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2789,6 +2794,12 @@ packages:
       eslint-scope: 7.1.1
       eslint-visitor-keys: 3.3.0
       espree: 9.5.0
+      svelte: 3.57.0
+    dev: false
+
+  /svelte/3.57.0:
+    resolution: {integrity: sha512-WMXEvF+RtAaclw0t3bPDTUe19pplMlfyKDsixbHQYgCWi9+O9VN0kXU1OppzrB9gPAvz4NALuoca2LfW2bOjTQ==}
+    engines: {node: '>= 8'}
     dev: false
 
   /text-table/0.2.0:

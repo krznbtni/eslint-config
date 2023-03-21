@@ -6,6 +6,8 @@
   "license": "MIT",
   "author": "krznbtni",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --write",
     "prepare": "husky install"
   },
   "config": {
@@ -14,6 +16,7 @@
     }
   },
   "devDependencies": {
+    "@krznbtni/eslint-config": "*",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.36.0",
