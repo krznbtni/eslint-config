@@ -1,14 +1,30 @@
-const { isPackageExists } = require('local-pkg')
+const fs = require('node:fs');
+const {join} = require('node:path');
+const {isPackageExists} = require('local-pkg');
 
-const TS = isPackageExists('typescript')
+const TS = isPackageExists('typescript');
+
+const tsconfig = process.env.ESLINT_TSCONFIG || 'tsconfig.eslint.json';
 
 if (!TS) {
   console.warn(
     '[@krznbtni/eslint-config] TypeScript is not installed, fallback to JS only.',
-  )
+  );
 }
 
+const parserOptions = !fs.existsSync(join(process.cwd(), tsconfig))
+  ? {}
+  : {
+      tsconfigRootDir: process.cwd(),
+      project: [tsconfig],
+      extraFileExtensions: ['.svelte'],
+      sourceType: 'module',
+      ecmaVersion: 2020,
+    };
+
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions,
   overrides: [
     {
       files: ['*.svelte'],
@@ -25,7 +41,7 @@ module.exports = {
       rules: {
         'no-unused-vars': 'off',
         'no-undef': 'off',
-        ...(TS ? { '@typescript-eslint/no-unused-vars': 'off' } : null),
+        ...(TS ? {'@typescript-eslint/no-unused-vars': 'off'} : null),
       },
     },
   ],
@@ -34,4 +50,4 @@ module.exports = {
     TS ? '@krznbtni/eslint-config-ts' : '@krznbtni/eslint-config-basic',
   ],
   rules: {},
-}
+};

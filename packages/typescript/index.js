@@ -1,9 +1,9 @@
-const fs = require('node:fs')
-const { join } = require('node:path')
+const fs = require('node:fs');
+const {join} = require('node:path');
 
-const basic = require('@krznbtni/eslint-config-basic')
+const basic = require('@krznbtni/eslint-config-basic');
 
-const tsconfig = process.env.ESLINT_TSCONFIG || 'tsconfig.eslint.json'
+const tsconfig = process.env.ESLINT_TSCONFIG || 'tsconfig.eslint.json';
 
 module.exports = {
   extends: [
@@ -13,7 +13,7 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
+      node: {extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts']},
     },
   },
   overrides: basic.overrides.concat(
@@ -37,7 +37,7 @@ module.exports = {
               'dot-notation': 'off',
               '@typescript-eslint/dot-notation': [
                 'error',
-                { allowKeywords: true },
+                {allowKeywords: true},
               ],
               '@typescript-eslint/no-floating-promises': 'error',
               '@typescript-eslint/no-misused-promises': 'error',
@@ -74,16 +74,16 @@ module.exports = {
     // TS
     '@typescript-eslint/ban-ts-comment': [
       'error',
-      { 'ts-ignore': 'allow-with-description' },
+      {'ts-ignore': 'allow-with-description'},
     ],
     '@typescript-eslint/member-delimiter-style': [
       'error',
-      { multiline: { delimiter: 'none' } },
+      {multiline: {delimiter: 'none'}},
     ],
     '@typescript-eslint/type-annotation-spacing': ['error', {}],
     '@typescript-eslint/consistent-type-imports': [
       'error',
-      { prefer: 'type-imports', disallowTypeAnnotations: false },
+      {prefer: 'type-imports', disallowTypeAnnotations: false},
     ],
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/prefer-ts-expect-error': 'error',
@@ -100,9 +100,9 @@ module.exports = {
         VariableDeclarator: 1,
         outerIIFEBody: 1,
         MemberExpression: 1,
-        FunctionDeclaration: { parameters: 1, body: 1 },
-        FunctionExpression: { parameters: 1, body: 1 },
-        CallExpression: { arguments: 1 },
+        FunctionDeclaration: {parameters: 1, body: 1},
+        FunctionExpression: {parameters: 1, body: 1},
+        CallExpression: {arguments: 1},
         ArrayExpression: 1,
         ObjectExpression: 1,
         ImportDeclaration: 1,
@@ -139,20 +139,20 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': [
       'error',
-      { functions: false, classes: false, variables: true },
+      {functions: false, classes: false, variables: true},
     ],
     'brace-style': 'off',
     '@typescript-eslint/brace-style': [
       'error',
       'stroustrup',
-      { allowSingleLine: true },
+      {allowSingleLine: true},
     ],
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': 'off',
-    '@typescript-eslint/object-curly-spacing': ['error', 'always'],
+    '@typescript-eslint/object-curly-spacing': ['error', 'never'],
     'semi': 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
+    '@typescript-eslint/semi': ['error', 'always'],
     'quotes': 'off',
     '@typescript-eslint/quotes': ['error', 'single'],
     'space-before-blocks': 'off',
@@ -171,12 +171,12 @@ module.exports = {
     'keyword-spacing': 'off',
     '@typescript-eslint/keyword-spacing': [
       'error',
-      { before: true, after: true },
+      {before: true, after: true},
     ],
     'comma-spacing': 'off',
     '@typescript-eslint/comma-spacing': [
       'error',
-      { before: false, after: true },
+      {before: false, after: true},
     ],
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-parens': ['error', 'functions'],
@@ -188,7 +188,7 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': [
       'error',
       'always',
-      { exceptAfterSingleLine: true },
+      {exceptAfterSingleLine: true},
     ],
 
     // off
@@ -209,4 +209,4 @@ module.exports = {
     // handled by unused-imports/no-unused-imports
     '@typescript-eslint/no-unused-vars': 'off',
   },
-}
+};
