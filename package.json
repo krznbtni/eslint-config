@@ -1,0 +1,29 @@
+{
+  "name": "@krznbtni/eslint-config-monorepo",
+  "version": "0.0.1",
+  "private": "true",
+  "packageManager": "pnpm@7.30.0",
+  "description": "Some ESLint config presets",
+  "author": "krznbtni",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install && pnpm -r run stub",
+    "release": "bumpp -r && pnpm -r publish"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@krznbtni/eslint-config": "*",
+    "bumpp": "^9.0.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.36.0",
+    "husky": "^8.0.0",
+    "rimraf": "^4.4.0"
+  }
+}
